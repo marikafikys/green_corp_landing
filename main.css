@@ -80,3 +80,120 @@ header {
     max-width: 550px; /*максимальная ширина области с текстом*/
   }
 
+  .form__containter {
+    width: 550px; /*максимальная ширина контейнера с текстом, метками, формами и кнопкой*/
+  }
+
+  .form {
+    background-color: #1D263A; /*цвет фона формы*/
+    color: #fff; /*цвет текста формы*/
+    padding-top: 115px; /*внутренний отступ сверху*/
+    padding-bottom: 115px; /*внутренний отступ снизу*/
+    text-align: center; /*расположение текста формы по центру*/
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .form h1 { /*этот селектор отбирает все теги h1 внутри тега с классом form*/
+    font-size: 48px;
+  }
+
+  .form p { /*этот селектор отбирает все теги p внутри тега с классом form*/
+    font-size: 18px;
+    opacity: 0.65; /*прозрачность текста*/
+  }
+
+  .form__group {
+    display: flex; /*задаем флексбокс*/
+    flex-direction: column; /*главная ось - вертикальная*/
+    text-align: left; /*Линейное содержимое выравнивается по левому краю линейного блока*/
+  }
+
+  .form form { /*этот селектор отбирает все теги form внутри тега с классом form*/
+    display: grid; /*задаем сетку*/
+    grid-gap: 20px; /*задаем отступы между ячейками сетки*/
+    margin-top: 60px; /*задаем отступ сверху*/
+  }
+
+  .form label { /*этот селектор отбирает все теги label внутри тега с классом form*/
+    font-size: 18px;
+    font-weight: 600; /*задаем толщину текста*/
+    margin-bottom: 15px; /*задаем отступ снизу*/
+  }
+
+  .form input { /*этот селектор отбирает все теги input внутри тега с классом form*/
+    font-size: 18px;
+    color: #213053;
+    height: 60px;
+    padding: 0px 20px;
+    border-radius: 15px; /*закругление краев*/
+    border: none; /*убираем обводку*/
+  } 
+
+  .form select { /*этот селектор отбирает все теги select внутри тега с классом form*/
+    font-size: 18px;
+    color: #213053;
+    height: 60px;
+    padding: 0px 20px;
+    border-radius: 15px; /*закругление краев*/
+    border: none; /*убираем обводку*/
+  } 
+
+  .form__submit {
+    font-size: 18px;
+    font-weight: 600; /*задаем толщину текста*/
+    margin-top: 40px; /*задаем отступ сверху*/
+  }
+
+  select { /*для всех тегов select*/
+    appearance: none; /*убираем стрелочку у селекта, которая по умолчанию отображается справа*/
+  }
+
+  input { /*для всех тегов input*/
+    outline: none; /*убираем стиль границы, которая появляется, когда начинаешь вводить какой-то текст*/
+  }
+
+  button:hover { /*изменение любой кнопки при наведении курсора на нее*/
+    background-color: #f6980c; /*цвет становится оранжевым*/
+    box-shadow: 0 16px 36px rgba(246 152 12 / 20%); /*появляется тень от кнопки с заданным размером и интенсивностью цвета*/
+    transition: background-color 0.3s ease-in; /*изменения происходят за 0.3 секунды по кривой ease-in*/
+  }
+
+footer {
+  padding: 90px 20px; /*внутренний отступ сверху-снизу и справа-слева*/
+}
+
+  .footer__container {
+    display: flex; /*задаем флексбокс*/
+    justify-content: center; /*центрируем содержимое*/
+  }
+
+  .footer__copyright {
+    margin-top: 40px; /*внешний отступ сверху*/
+    display: flex; /*задаем флексбокс*/
+    justify-content: center; /*центрируем содержимое*/
+    opacity: 0.5; /*прозрачность содержимого*/
+  }
+
+  .footer__group {
+    margin-right: 80px; /*внешний отступ справа*/
+  }
+
+  .footer__group h3 { /*этот селектор отбирает все теги h3 внутри тега с классом footer__group*/
+    font-size: 16px;
+    opacity: 0.7; /*прозрачность содержимого*/
+    margin-bottom: 30px; /*внешний отступ снизу*/
+  }
+
+  div .footer__links { /*этот селектор отбирает все теги классы footer__links внутри тега div*/
+    display: flex; /*задаем флексбокс*/
+    flex-direction: column; /*главная ось - вертикальная*/
+  }
+
+  .footer__links a { /*этот селектор отбирает все теги a внутри тега с классом footer__links*/
+    margin-bottom: 15px; /*внешний отступ снизу*/
+    font-weight: 600; /*толщина текста*/
+  }
+
+  
