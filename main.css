@@ -9,6 +9,10 @@ header {
     justify-content: space-between; /*делаем выравнивание: логотип прижимается к левому краю, див прижимается к правому краю*/
     align-items: center; /*центрируем по вертикали*/
     padding: 20px; /*отступ от всех краев*/
+    position: sticky; /*позиционируем шапку со сдвигом контента вниз на высоту шапки*/
+    top: 0; /*отступ шапки сверху отсутствует*/
+    background-color: #fff; /*цвет шапки*/
+    z-index: 1; /*шапка располагается поверх всех элементов*/
   }
 
   .header__logo {
@@ -162,6 +166,7 @@ header {
 
 footer {
   padding: 90px 20px; /*внутренний отступ сверху-снизу и справа-слева*/
+  font-weight: 600; /*толщина текста*/
 }
 
   .footer__container {
@@ -193,7 +198,115 @@ footer {
 
   .footer__links a { /*этот селектор отбирает все теги a внутри тега с классом footer__links*/
     margin-bottom: 15px; /*внешний отступ снизу*/
-    font-weight: 600; /*толщина текста*/
   }
 
+  @keyframes rotation { /*задаем сценарий анимации, присваиваем имя rotation*/
+    0%{ 
+      transform: rotate(0deg); /*условие в начале цикла анимации*/
+    }
   
+    100%{
+      transform: rotate(360deg); /*условие в конце цикла анимации*/
+    }
+  }
+
+  .about__sun—image { /*для элемента с классом bout__sun—image*/
+    animation-name: rotation; /*применяем сценарий анимации под названием rotation*/
+    animation-duration: 10s; /*цикл анимации - продолжительность от начала до конца*/
+    animation-iteration-count: infinite; /*количество повторов: бесконечно*/
+    animation-timing-function: linear; /*функция перехода анимации*/
+    position: absolute; /*задаем абсолютное позиционирование - поверх других элементов*/
+    /*можно задать всю анимацию одной строкой: animation: rotation 10s infinite linear; */
+  }
+
+  @media (min-width: 720px) and (max-width: 900px) { /*создаем медиазапрос для адаптации лендинга под планшеты*/
+    header {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    .about {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    .form {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    footer {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  
+    .header__logo {
+      height: 20px;
+    }
+  
+    .about h1 {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  
+    .about__image {
+      width: 280px;
+    }
+ 
+    .about__sun—image {
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  @media (min-width: 320px) and (max-width: 719px) { /*создаем медиазапрос для адаптации лендинга под мобильные телефоны*/
+    header {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
+    .about {
+      padding-right: 10px;
+      padding-left: 10px;
+      display: flex; /*задаем флексбокс*/
+      flex-flow: wrap; /*элементы будут переноситься внутри контейнера*/
+    }
+
+    .about__info { 
+      order: 1; /*задаем очередность отображения элемента - первый идет после нулевого*/
+    }
+    
+    .about__images {
+      order: 0; /*задаем очередность отображения элемента - нулевой идёт первым*/
+    }
+
+    .form {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
+    .footer__container {
+      padding-right: 10px;
+      padding-left: 10px;
+      display: flex; /*задаем флексбокс*/
+      flex-direction: column; /*главная ось - вертикальная*/
+    }
+  
+    .header__logo {
+      height: 20px;
+    }
+  
+    .about h1 {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  
+    .about__image {
+      width: 280px;
+    }
+ 
+    .about__sun—image {
+      width: 75px;
+      height: 75px;
+    }
+  }
