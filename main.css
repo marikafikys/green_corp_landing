@@ -9,10 +9,19 @@ header {
     justify-content: space-between; /*делаем выравнивание: логотип прижимается к левому краю, див прижимается к правому краю*/
     align-items: center; /*центрируем по вертикали*/
     padding: 20px; /*отступ от всех краев*/
-    position: sticky; /*позиционируем шапку со сдвигом контента вниз на высоту шапки*/
+    /*position: sticky; позиционируем шапку со сдвигом контента вниз на высоту шапки*/
+    position: fixed;
+    left: 0;
+    right: 0;
     top: 0; /*отступ шапки сверху отсутствует*/
-    background-color: #fff; /*цвет шапки*/
+    background-color: transparent; /*прозрачный цвет шапки*/
     z-index: 1; /*шапка располагается поверх всех элементов*/
+    transition: background-color, box-shadow 0.25s ease; /*анимация перехода изменения цвета фона и появления тени*/
+  }
+
+  .header__scrolled { /*Чтобы заработала анимация, мы должны в JS на событие скролла страницы добавлять к нашей шапке класс header__scrolled. И убирать этот класс, когда позиция скролла становится равной 0.*/
+    background-color: white;
+    box-shadow: 0 12px 34px -11px rgb(65 62 101 / 10%); /*тень от шапки*/
   }
 
   .header__logo {
@@ -51,7 +60,7 @@ header {
     height: 100px;
   }
 
-  .orb-canvas {
+  .orb-canvas { /*холст для анимации пузырьков*/
     position: absolute;
     top: 0; 
     right: 0;
@@ -64,7 +73,7 @@ header {
     display: flex; /*делаем flex-контейнер*/
     justify-content: space-around; /*равномерно распределяем все элементы по ширине flex-блока. Все элементы имеют полноразмерное пространство с обоих концов*/
     align-items: center; /*центрируем по вертикали*/
-    padding-top: 115px; /*отступ сверху*/
+    padding-top: 200px; /*отступ сверху*/
     padding-bottom: 115px; /*отступ снизу*/
     background: url('img/back.png') no-repeat; /*фон будет картинкой по адресу, написанному в URL. No-repeat — «не повторять», — чтобы картинка фона показывалась лишь один раз, без повторений.*/
     background-position: center; /*картина располагается по центру*/
